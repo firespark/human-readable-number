@@ -4,6 +4,7 @@
   "description": "Template for rsapp task",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "mocha test",
     "postinstall": "node postinstall.js"
   },
@@ -25,5 +26,6 @@
     "colors": "^1.4.0",
     "mocha": "^6.2.2",
     "semver": "^6.3.0"
-  }
+  },
+  "devDependencies": {}
 }

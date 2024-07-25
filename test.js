@@ -2,6 +2,8 @@ const assert = require('assert');
 
 const toReadable = require('./src');
 
+const readable = toReadable(0);
+
 
 it('Should return \'zero\' when 0 given', () => {
   const readable = toReadable(0);
