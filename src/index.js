@@ -1,20 +1,48 @@
 module.exports = function toReadable (number) {
-    // 0, 10 - 19 - exceptions array
-    // 1-9 - units array
-    // 20, 30 .. 90 - tens array
+    
+    const exceptionsArr = [
+        [0, 'zero'],
+        [10, 'ten'],
+        [11, 'eleven'],
+        [12, 'twelve'],
+        [13, 'thirteen'],
+        [14, 'fourteen'],
+        [15, 'fifteen'],
+        [16, 'sixteen'],
+        [17, 'seventeen'],
+        [18, 'eighteen'],
+        [19, 'nineteen'],
+    ];
 
-    // Check number. If in exceptions array, return its value
+    const unitsArr = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+    const tensArr = ['twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+    
+    if (exceptionsArr[number]) {
+        return exceptionsArr[number];
+    }
 
-    // Else check number length:
+    else {
+        const numberLength = number.length;
 
-    // If 1, return units[number - 1]
+        switch (numberLength) {
 
-    // If 2, return tens[number[0] - 1] + units[number[1] - 1]
+            case 1:
+                return units[number - 1];
+                break;
 
-    // If 3, returns units[number[0] - 1] + 'hundred' + tens[number[0] - 1] + units[number[1] - 1]
+            case 2:
+                return tens[number[0] - 1] + ' ' + units[number[1] - 1];
+                break;
 
-    console.log('111');
+            case 3:
+                return units[number[0] - 1] + ' hundred ' + tens[number[0] - 1] + ' ' + units[number[1] - 1];
 
 
-  
+        }
+
+        return;
+    }
+
+
+
 }
