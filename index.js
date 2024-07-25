@@ -1,5 +1,5 @@
 const toReadable = require('./src');
 
-const readable = toReadable(54);
+const readable = toReadable(300);
 
 console.log(readable);
