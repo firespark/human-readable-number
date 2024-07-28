@@ -53,11 +53,17 @@ module.exports = function toReadable (number) {
 
     }
 
+    if (number > 100) {
+        // First figure in number
+        const figure1 = Math.trunc(number / 100);
+        // Second and third figures
+        const figureTens = parseInt(number.toString()[1] + number.toString()[2]);
+
+        return exceptionsArr[figure1] + ' hundred and ' + toReadable(figureTens);
+    }
+
     
 
     return;
     
-
-
-
 }
