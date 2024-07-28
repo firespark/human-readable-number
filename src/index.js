@@ -24,7 +24,7 @@ module.exports = function toReadable (number) {
         19: 'nineteen',
         20: 'twenty', 
         30: 'thirty', 
-        40: 'fourty', 
+        40: 'forty', 
         50: 'fifty', 
         60: 'sixty', 
         70: 'seventy', 
@@ -53,13 +53,22 @@ module.exports = function toReadable (number) {
 
     }
 
-    if (number > 100) {
+    if (number >= 100) {
         // First figure in number
         const figure1 = Math.trunc(number / 100);
         // Second and third figures
         const figureTens = parseInt(number.toString()[1] + number.toString()[2]);
+        
+        // Check if conjunction needed
+        //const conj = (figureTens < 10) ? 'and ' : '';
 
-        return exceptionsArr[figure1] + ' hundred and ' + toReadable(figureTens);
+        let returnStr = exceptionsArr[figure1] + ' hundred';
+
+        if (figureTens > 0) {
+            returnStr += ' ' + toReadable(figureTens);
+        }
+
+        return returnStr;
     }
 
     
