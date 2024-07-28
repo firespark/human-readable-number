@@ -7,6 +7,15 @@ module.exports = function toReadable (number) {
     
     const exceptionsArr = [
         [0, 'zero'],
+        [1, 'one'], 
+        [2, 'two'], 
+        [3, 'three'], 
+        [4, 'four'], 
+        [5, 'five'], 
+        [6, 'six'], 
+        [7, 'seven'], 
+        [8, 'eight'], 
+        [9, 'nine']
         [10, 'ten'],
         [11, 'eleven'],
         [12, 'twelve'],
@@ -17,39 +26,27 @@ module.exports = function toReadable (number) {
         [17, 'seventeen'],
         [18, 'eighteen'],
         [19, 'nineteen'],
+        [20, 'twenty'], 
+        [30, 'thirty'], 
+        [40, 'fourty'], 
+        [50, 'fifty'], 
+        [60, 'sixty'], 
+        [70, 'seventy'], 
+        [80, 'eighty'], 
+        [90, 'ninety']
     ];
 
-    const unitsArr = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
-    const tensArr = ['twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+    
     
     if (exceptionsArr[number]) {
         
         return exceptionsArr[number];
     }
 
-    else {
+    
 
-        const numberLength = number.toString().length;
-
-        switch (numberLength) {
-
-            case 1:
-                return unitsArr[number - 1];
-                break;
-
-            case 2:
-
-                return tensArr[getFigureFromNumber(0) - 2] + ' ' + unitsArr[getFigureFromNumber(1) - 1];
-                break;
-
-            case 3:
-                return unitsArr[getFigureFromNumber(0) - 1] + ' hundred ' + tensArr[getFigureFromNumber(0) - 2] + ' ' + unitsArr[getFigureFromNumber(1) - 1];
-
-
-        }
-
-        return;
-    }
+    return;
+    
 
 
 
